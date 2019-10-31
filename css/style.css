@@ -1,15 +1,59 @@
-header {
-    display: table;
+.io-type{
+    display: inline-block;
+    margin: 0px 0px 0px 1px;
+    padding: 0px 5px 0px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.io-type:hover{
+    background-color:#727a81;
+}
+
+.signal-type{
+    margin: 0px 0px 1px 0px;
+    padding: 6px 0px 6px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.signal-type:hover{
+    background-color:#727a81;
 }
 
 #cell1 {
-    position: absolute;
     width: 158px;
 }
 
 #cell2 {
-    position: relative;
+    position: absolute;
+    top: 35px;
     left: 180px;
-    top: 30px;
     width: 336px;
+}
+
+#left-menu {
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    float: left;
+    background-color: #cedeeb;
+}
+
+#slogan {
+    position: relative; 
+}
+
+#top-menu {
+    position: absolute;
+    left: 190px;
+    width: 825px;
+    height: 50px;
+    background-color: #cedeeb;
 }

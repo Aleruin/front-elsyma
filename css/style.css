@@ -1,0 +1,15 @@
+header {
+    display: table;
+}
+
+#cell1 {
+    position: absolute;
+    width: 158px;
+}
+
+#cell2 {
+    position: relative;
+    left: 180px;
+    top: 30px;
+    width: 336px;
+}

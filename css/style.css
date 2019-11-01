@@ -1,7 +1,15 @@
+header{
+    position: relative;
+}
+
+main{
+    position: relative;
+}
+
 footer{
-    position: absolute;
-    bottom: 0px;
-    padding: 0px 10px 0px 145px;
+    padding: 10px 0px 10px 155px;
+    width: 870px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     background-color: #cedeeb;
 }
@@ -13,12 +21,14 @@ footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     text-align: center;
+    color: white;
     border: 1px solid black;
     border-radius: 4px;
 }
 
 .io-type:hover{
-    background-color:#727a81;
+    cursor: pointer;
+    background-color:#8cadca;
 }
 
 .signal-type{
@@ -27,12 +37,14 @@ footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     text-align: center;
+    color: white;
     border: 1px solid black;
     border-radius: 4px;
 }
 
 .signal-type:hover{
-    background-color:#727a81;
+    cursor: pointer;
+    background-color:#8cadca;
 }
 
 #cell1 {
@@ -47,21 +59,16 @@ footer{
 }
 
 #left-menu {
-    position: absolute;
+    position: relative;
     width: 180px;
-    height: 70%;
-    float: left;
-    background-color: #cedeeb;
-}
-
-#slogan {
-    position: relative; 
+    height: 660px;
+    background-color: #286494;
 }
 
 #top-menu {
     position: absolute;
-    left: 190px;
+    left: 183px;
     width: 825px;
-    height: 50px;
-    background-color: #cedeeb;
+    height: 48px;
+    background-color: #286494;
 }

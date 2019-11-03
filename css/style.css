@@ -6,14 +6,6 @@ main{
     position: relative;
 }
 
-footer{
-    padding: 10px 0px 10px 155px;
-    width: 870px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-    background-color: #cedeeb;
-}
-
 .io-type{
     display: inline-block;
     margin: 0px 0px 0px 1px;
@@ -61,7 +53,7 @@ footer{
 #left-menu {
     position: relative;
     width: 180px;
-    height: 660px;
+    height: 875px;
     background-color: #286494;
 }
 

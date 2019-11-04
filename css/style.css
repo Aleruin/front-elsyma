@@ -1,17 +1,29 @@
+.headerlanding, .leftParameters, .topParameters {
+    background-color: #bdcfcf;
+}
 header {
-    height: 100%;
-    float: left;
+  
+      
 }
 
 .headerlanding {
-    height: 90px;
+    
+    
 }
 
 .leftParameters {
-
+    list-style: none;
 }
 
-.topParameters li{
-    
+.topParameters {
+    height: 90px;
+        
+}
+
+.btn-group{
+    font-size: 20px;
+    margin: 25px 40px;
     
 }
+
+.list-group-item {border:none}

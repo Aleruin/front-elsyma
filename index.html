@@ -12,102 +12,79 @@
 <script src="vue-dev/dist/vue.js"></script>
 
 <div class="container-fluid">
-    <div class="row">
-        <header>
-            <div class="row">
-                <div class="col-2 ">
-                    <img src="img/logo.jpg">
-                </div>
-                <div class="col-10 ">
-                    <nav class="container-fluid">   
-                        <div class="row topParameters ">
-                            <div class="col-2 ">
-                                <div class="btn-group" >
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary" >Мeнюшка</button>
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   
-                                            <span class="sr-only">Менюшка</span>
-                                    </button>
-                                    <div class="dropdown-menu ">    
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 ">
-                                <div class="btn-group">
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary">Менюшка</button>
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <header>
+        <div class="row">
+            <div class="col-2">
+                <img src="img/logo.jpg">
+            </div>
+            <div class="col-10">
+                <nav>   
+                    <div class="row topParameters ">
+                        <div class="col-3 ">
+                            <div class="btn-group" >
+                                <button style="border: none" type="button" class="btn btn-outline-secondary" >Аналоговые входы</button>
+                                <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   
                                         <span class="sr-only">Менюшка</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                    </div>
+                                </button>
+                                <div class="dropdown-menu ">    
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
                                 </div>
                             </div>
-                            <div class="col-2 ">
-                                <div class="btn-group">
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary">Менюшка</button>
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Менюшка</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 ">
-                                <div class="btn-group">
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary">Менюшка</button>
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Менюшка</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 ">
-                                <div class="btn-group">
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary">Менюшка</button>
-                                    <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Менюшка</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Менюшка</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 ">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-outline-secondary">Login</button>
-                                </div>
-                            </div>    
                         </div>
-                    </nav> 
-                </div>
-            </div>         
-        </header>
-                    
-        
-    </div>
+                        <div class="col-3 ">
+                            <div class="btn-group">
+                                <button style="border: none" type="button" class="btn btn-outline-secondary">Дискретные входы</button>
+                                <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Менюшка</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 ">
+                            <div class="btn-group">
+                                <button style="border: none" type="button" class="btn btn-outline-secondary">Аналоговые/дискретные выходы</button>
+                                <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Менюшка</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 ">
+                            <div class="btn-group">
+                                <button style="border: none" type="button" class="btn btn-outline-secondary">Управляющие сигналы</button>
+                                <button style="border: none" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Менюшка</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Менюшка</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav> 
+            </div>
+        </div>         
+    </header>
 </div>
+
 <div class="row">
     <div class="col-2">
         <div class="list-group" id="list-tab" role="tablist">

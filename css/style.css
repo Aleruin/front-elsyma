@@ -1,3 +1,61 @@
+
+body, .logo, .topmenu, .leftmenu  {
+    background-color: #506459;
+}
+
+.top {background-color: #506459;}
+.logo{
+   
+    z-index: 1;
+}
+
+.topmenu a{
+    padding: 0px 50px;
+}
+
+.leftmenu {
+
+}
+
+.contentconteiner {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 input[type="submit"] {
     float: right;
     margin: 0 0 5px 0;
@@ -46,32 +104,3 @@ input[type="text"], input[type="password"] {
     padding: 5px;
 }
 
-.headerlanding, .leftParameters, .topParameters {
-    background-color: #bdcfcf;
-}
-header {
-  
-      
-}
-
-.headerlanding {
-    
-    
-}
-
-.leftParameters {
-    list-style: none;
-}
-
-.topParameters {
-    height: 90px;
-        
-}
-
-.btn-group{
-    font-size: 20px;
-    margin: 25px 40px;
-    
-}
-
-.list-group-item {border:none}

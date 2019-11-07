@@ -18,42 +18,8 @@ body, .logo, .topmenu, .leftmenu  {
 }
 
 .contentconteiner {
-    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 input[type="submit"] {
@@ -103,4 +69,3 @@ input[type="text"], input[type="password"] {
 .modal-row {
     padding: 5px;
 }
-

@@ -1,0 +1,49 @@
+input[type="submit"] {
+    float: right;
+    margin: 0 0 5px 0;
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: rgb(40, 90, 228);
+    border: 1px solid rgb(40, 90, 228);
+    border-radius: 10px;
+    
+}
+
+input[type="text"], input[type="password"] {
+    width: 300px;
+}
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table {
+    display: table;
+    vertical-align: middle;
+    margin: 0px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.row {
+    padding: 5px;
+}

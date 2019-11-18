@@ -25,8 +25,9 @@
                         <input type="password" name="password" placeholder="Введите пароль">
                     </div>
                     <div class="row">
-                        <input type="submit" value="Войти" @click="compareHashes">
+                        <input type="submit" value="Войти" @click="compareHashesHTTP">
                     </div>
+
                 </div>
             </div>
         </div>
@@ -38,13 +39,57 @@
         new Vue({
             el: '#modal-auth',
             data: {
-                showModal: true
+                showModal: true,
+                userHash: "",
+                blobArray: new Blob(["d29af8a2e160dd867fe45a75f70bf805b1b6c1cf92017cf53cdf1d5cf390c916"], {type: 'text/plain'})
             },
             methods: {
-                compareHashes: () => {
-                    let out = sjcl.hash.sha256.hash("" + document.querySelector('input[type="password"]').value)
+                compareHashes: function() {
+                    if (this.isEmptyPassword()) {
+                        this.userHash = "" + sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash("" + document.querySelector('input[type="password"]').value))
+                    } else {
+                        alert('Строка пустая')
+                        return
+                    }
+                    
+                    let textPromise = this.blobArray.text()
 
-                    console.log(sjcl.codec.hex.fromBits(out))
+                    textPromise.then(text => {
+                        if (this.userHash == text) {
+                            alert('Все работает')
+                            this.showModal = false
+                        }
+                    });
+                },
+                isEmptyPassword: function() {
+                    if (document.querySelector('input[type="password"]').value != "") {
+                        return true
+                    } else {
+                        return false
+                    }
+                },
+                compareHashesHTTP: function() {
+                    if (this.isEmptyPassword()) {
+                        this.userHash = "" + sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash("" + document.querySelector('input[type="password"]').value))
+                    } else {
+                        alert('Строка пустая')
+                        return
+                    } 
+
+                    let xhr = new XMLHttpRequest()
+
+                    xhr.open('GET', '/var/passwd', false)
+
+                    xhr.send()
+
+                    if (xhr.status != 200) {
+                        alert (xhr.status + ": " + xhr.statusText)
+                    } else if (xhr.responseText == this.userHash) {
+                        alert('Добро пожаловать!')
+                        this.showModal = false
+                    } else {
+                        alert('Не удалось сравнить хэши паролей.')
+                    }
                 }
             }
         });

@@ -147,26 +147,22 @@
     </div>
 </div>
 
-    
-
-
-
-
-
-
-
-
-<!--
 <div id="modal-auth" v-show="showModal">
     <div class="modal-mask">
         <div class="modal-wrapper">
             <div class="modal-table">
+                <div class="modal-row">
+                    <p class="welcome">Войти в систему</p>
+                    <hr>
+                </div>
                 <div class="modal-row">
                     Введите имя пользователя:
                 </div>
                 <div class="modal-row">
                     <input type="text" name="username" placeholder="Введите имя пользователя">
                 </div>
+                <empty-error v-if="this.emptyField"></empty-error>
+                <warning-error v-if="this.errorData"></warning-error>
                 <div class="modal-row">
                     Введите пароль:
                 </div>
@@ -174,13 +170,14 @@
                     <input type="password" name="password" placeholder="Введите пароль">
                 </div>
                 <div class="modal-row">
-                    <input type="submit" value="Войти" @click="showModal = !showModal">
+                    <input type="submit" value="Войти" @click="compareHashesJSON">
                 </div>
             </div>
         </div>
     </div>
 </div>
--->
+
+<script src="lib/sjcl/sjcl.js"></script>
 <script src="js/main.js"></script>
     
     <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>

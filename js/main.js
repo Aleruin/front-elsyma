@@ -25,29 +25,12 @@ new Vue({
             }
         },
         isEmptyBoth: function() {
-            if (this.isEmptyLogin() && this.isEmptyPassword()) {
-                return true
-            } else {
-                return false
-            }
+            this.emptyField = false
+            this.errorData = false
         },
-        // compareHashesHTTP: function() {
-        //     let self = this
-
-        //     this.compareRequest()
-        //     .then(function(res) {
-        //         let hash = res.slice(0, 64)
-        //         let selfHash = self.getHash()
-
-        //         if (selfHash == hash) {
-        //             self.showModal = false
-                    
-        //         } else {
-        //             alert("Введенные логин и пароль не совпадают")
-        //         }
-        //     })
-        // },
         compareHashesJSON: function() {
+            this.isEmptyBoth()
+
             let self = this
 
             this.getJSON()

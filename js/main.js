@@ -9,6 +9,11 @@ new Vue({
         emptyField: false,
         errorData: false
     },
+    created: function() {
+        if(window.sessionStorage.getItem('isLogin') == "true") {
+            this.showModal = false
+        }
+    },
     methods: {
         isEmptyPassword: function() {
             if (document.querySelector('input[type="password"]').value != "") {
@@ -73,15 +78,6 @@ new Vue({
             } else {
                 return this.userHash = "" + sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash("" + document.querySelector('input[type="password"]').value))
             }
-        },
-        compareRequest: function() {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open("GET", "usr/hash.txt");
-                xhr.onload = () => resolve(xhr.responseText);
-                xhr.onerror = () => reject(xhr.statusText);
-                xhr.send();
-            });
         },
         getJSON: function() {
             return new Promise((resolve, reject) => {

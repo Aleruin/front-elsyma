@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ELSYMA-MK01</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+<script src="vue-dev/dist/vue.js"></script>
+
+<!--<?php
+    include('nav.php');
+?>-->
+<div class=" ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark topmenu col-md-auto">
+        
+        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="analog inputs.html">Аналоговые входы <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                        <a class="nav-link" href="discrete inputs.html">Дискретные входы <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="analog and discrete outputs.html">Дискретные / Аналоговые выходы</a>
+                </li>
+                <li class="nav-item ">
+                        <a class="nav-link" href="control.html">Управление<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Запрос" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+            </form> -->
+        </div>
+    </nav>   
+</div>
+
+<div class="container-fluid ">
+    <div class="row ">
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-md-auto bg-dark ">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark topmenu col-md-auto">
+                
+                <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav flex-column">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Аналоговые входы <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                                <a class="nav-link" href="#">Дискретные входы <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">Дискретные / Аналоговые выходы</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">Управление<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 col-md-auto" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="border: none;">   
+            <div class="conteineimg py-4">
+                <div class="">
+                    <p>
+                        <img src="img/1.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/1.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/1.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/1.jpg">
+                        <p>Информация</p>
+                        </p>
+                    <p>
+                        <img src="img/1.jpg">
+                        <p>Информация</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class=" col-xl-5 col-lg-5 col-md-5 col-sm-8 col-md-auto" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="border: none;">   
+            <div class="conteineimg py-4">
+                <div class="">
+                    <p>
+                        <img src="img/2.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/2.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/2.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/2.jpg">
+                        <p>Информация</p>
+                    </p>
+                    <p>
+                        <img src="img/2.jpg">
+                        <p>Информация</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+            
+    </div>          
+</div>           
+
+<!-- <div id="modal-auth" v-show="showModal">
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-table">
+                <div class="modal-row">
+                    <p class="welcome">Войти в систему</p>
+                    <hr>
+                </div>
+                <div class="modal-row">
+                    Введите имя пользователя:
+                </div>
+                <div class="modal-row">
+                    <input type="text" name="username" placeholder="Введите имя пользователя">
+                </div>
+                <empty-error v-if="this.emptyField"></empty-error>
+                <warning-error v-if="this.errorData"></warning-error>
+                <div class="modal-row">
+                    Введите пароль:
+                </div>
+                <div class="modal-row">
+                    <input type="password" name="password" placeholder="Введите пароль">
+                </div>
+                <div class="modal-row">
+                    <input type="submit" value="Войти" @click="compareHashesJSON">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<script src="lib/sjcl/sjcl.js"></script>
+<script src="js/main.js"></script>
+    
+    <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="lib/popper/popper.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

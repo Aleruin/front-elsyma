@@ -1,37 +1,21 @@
 
-body, .logo, .topmenu, .leftmenu  {
-    
-}
+/* Стили страницы */
 
-
-
-.logo{
-    z-index: 1;
-}
-
-.topmenu li{
-    
-}
-
-.conteineimg img{
-    
-    height: 150px;
-    width: 150px;
-}
-
-.conteineimg p {
-    padding: 10px 45px;
-}
-
-.leftmenu a {
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: inline-block;
 
 }
+.darkgray {background: darkgray;}
+.red {background: red;}
+.green {background: green;}
 
 
 
-.contentconteiner {
-
-}
+   
 
 /* Стили модального окна */
 

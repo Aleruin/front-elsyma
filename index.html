@@ -35,22 +35,70 @@
     </nav>   
 </div>
 
-<div class="container-fluid ">
-    <div class="row ">        
-        <div class="col-md-auto" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="border: none;">   
-            <div class="conteineimg py-4">
-                <h1>Информация о плате</h1>
-
-                <div id="indexData">        
+<div class="container-fluid">   
+    <div id="indexData" >        
+        <h3 style="text-align: center;">Информмция о плате</h3>
+        <div class="">
+            <div class="row">
+                <div class="col-6">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                <p>Флаг отладки</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>Положение переключателей</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>Наличие SD карты</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>Версия ядра операционной системы</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>Версия CoDeSys</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>FWVer</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>Название модуля</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>Дополнительная информация</p>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6">
                     <template v-for="perf in indexPerforms">                                                           
-                        <p>{{ perf }} : {{values[perf]}}</p>                                                                                                              
+                        <table class="table" >
+                            <tr>
+                                <th scope="">
+                                    <a>{{values[perf]}}</a>
+                                </th>
+                            </tr>
+                        </table>                                                                                                              
                     </template>
-                </div> 
+                </div>
             </div>
         </div>
-    </div>
-</div>          
-          
+    </div> 
+</div>    
 
 <!-- <div id="modal-auth" v-show="showModal">dataControl
     <div class="modal-mask">

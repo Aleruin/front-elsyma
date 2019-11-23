@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 new Vue({
   data: {
     history_container: []
@@ -79,4 +78,3 @@ new Vue({
 
     }
 });
->>>>>>> 4ad4f603992e4066c7bd754241dff0bc5888ecae

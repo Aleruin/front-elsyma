@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <script src="vue-dev/dist/vue.js"></script>
+
     <header>
         <div id="cell1">
             <img src="img/logo.jpg">
@@ -15,8 +17,16 @@
         </div>
     </header>
 
-    <div id="menu">
+    <main>
+        <div id="top-menu">
+            <io-menu></io-menu>
+        </div>
+    
+        <div id="left-menu">
+            <type-signal-menu></type-signal-menu>
+        </div>
+    </main>
 
-    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

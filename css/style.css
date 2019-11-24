@@ -14,14 +14,21 @@
 .green {background: green;}
 
 .color:hover {
-            background:#8a8a85;
-            border-radius: 15px;
-            font-family:Roboto;
-            text-align:center;
-            transition:all 0.3s ease;
+    background:#8a8a85;
+    border-radius: 15px;
+    transition:all 0.5s ease;
 }
 
-   
+.mainTable:hover {
+    background: rgba(169, 169, 169, 0.4) ;
+    transition:all 0.3s ease;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 
 /* Стили модального окна */
 

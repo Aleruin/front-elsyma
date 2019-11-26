@@ -3,8 +3,8 @@
   el: '#data',                                            
                                                           
   data: {                                                 
-    descretePerfoms: ["DAC-0", "DAC-1", "DAC-2", "DAC-3", "DAC-4", "DAC-5"],
-    currentPerform: "DAC-0",                 
+    descretePerfoms: "DAC-val",
+    currentPerform: "DAC-val",                 
     values: null                                          
   },                          
                                                 
@@ -45,7 +45,7 @@
           xhr.onerror = () => reject(xhr.statusText);   
           xhr.send();                                   
       });                                               
-    }  
+    }
   }  
 
 })

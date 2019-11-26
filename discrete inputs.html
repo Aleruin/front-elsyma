@@ -99,219 +99,27 @@
     </div>
 </div> 
 <!--Конец таблицы выходов-->    
-<!--Начало таблицы входов первого ряда-->
+
+<!--ЦАП входы-->
 <div class="container-fluid ">
-    <h2 class="text-center">ЦАП входы </h2>
-    <div class="row py-4" style="text-align: center;"  >
-        <div class="col">
-            <p>DAC-0</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
+    <h2 class="text-center">ЦАП входы</h2>
+
+    <div id="data" class="row py-4" style="text-align: center;"  >
+        <template v-for="val in values">
+            <div class="col">        
+                <p>DAC-0</p>
+                <p>{{ val }}</p>
+
+                <div v-if="val === '0'">
+                    <div class="circle"></div>
+                </div>
+                <div v-else>
+                    <div class="circle darkgray"></div>
+                </div>
+           
             </div>
-        </div>
-        <div class="col">
-            <p>DAC-1</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-2</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-3</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-4</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-5</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-6</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-7</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-8</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-9</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
+        </template>
     </div>
-</div>
-<!--Конец таблицы входов первого ряда-->            
-<!--Начало таблицы входов второго ряда-->            
-<div class="container-fluid ">
-    <div class="row py-4" style="text-align: center;"  >
-        <div class="col">
-            <p>DAC-10</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-11</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-12</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-13</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-14</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-15</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-16</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-18</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-18</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-19</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Конец таблицы входов второго ряда-->            
        
 
 <!-- <div id="modal-auth" v-show="showModal">
@@ -341,8 +149,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</div> -->
+    </div> -->
 
     <script src="lib/sjcl/sjcl.js"></script>
     <script src="js/main.js"></script>
@@ -351,9 +158,9 @@
     <script src="lib/popper/popper.min.js"></script>
     <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     
-    <script src="vue-dev/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+    <script src="vue-dev/dist/vue.js"></script>    
     <script src="js/Sergeyvue.js"></script>
+    <script src="js/dataControl.js"></script>
     
 </body>
 </html>

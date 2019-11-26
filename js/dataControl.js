@@ -4,7 +4,11 @@
 
   data: {
     dacPerfoms: "DAC-val",
-    dacValues: null
+    dacValues: null,
+    adcPerfoms: "ADC-val",
+    adcValues: null,
+    adcDiag: "ADC-diag",
+    adcStatus: 0
   },
 
   created: function () {
@@ -24,6 +28,8 @@
           .then(function(res) {
             var after_party = JSON.parse(res);
             self.dacValues = after_party[self.dacPerfoms]
+            self.adcValues = after_party[self.adcPerfoms]
+            self.adcStatus = after_party[self.adcDiag]
           })
 
     },

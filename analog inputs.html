@@ -32,66 +32,37 @@
 </div>
 <!--Конец navbar-->
 <!--Начало таблицы входов и выходов-->
-<div class="container-fluid ">
+<div class="container-fluid">
     <div class="row">
-        <table class="table table-striped table table-hover col-xl-8 col-lg-8 col-md-8 col-sm-8 col-md-auto" style="text-align: center; " >
+        <table id="data" class="table table-striped table table-hover col-xl-8 col-lg-8 col-md-8 col-sm-8 col-md-auto" style="text-align: center; " >
             <thead>
                 <tr>
                     <th scope="col" colspan="4">Входы АЦП</th>
                 </tr>
-            </thead>
-            <thead>
                 <tr>
-                    <th scope="col">ADC-0</th>
-                    <th scope="col">ADC-1</th>
-                    <th scope="col">ADC-2</th>
-                    <th scope="col">ADC-3</th>
+                    <template v-for="(val, index) in adcValues">
+                            <th scope="col">ADC-{{ index }}</th> 
+                    </template>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
-                        <div id="app1">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app2">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app3">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app4">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
+                    <!--Состояние АЦП: работает/не работает-->
+                    <template v-for="stat in adcStatus">
+                        <td>
+                            <div v-if="stat === '0'">
+                                <div class="circle green"></div>
+                            </div>
+                            <div v-else>
+                                <div class="circle red"></div>
+                            </div>
+                         </td>
+                    </template>
                 </tr>
                 <tr>
-                    <td>234</td>
-                    <td>74</td>
-                    <td>11</td>
-                    <td>11</td>
+                    <template v-for="val in adcValues">
+                        <td scope="col">{{ val }}</td> 
+                    </template>
                 </tr>
             </tbody>
         </table>
@@ -99,7 +70,7 @@
         <table class="table table-striped table table-hover col-xl-4 col-lg-4 col-md-4 col-sm-4 col-md-auto " style="text-align: center;">
             <thead>
                 <tr>
-                    <th scope="col" colspan="4">Входы АЦП</th>
+                    <th scope="col" colspan="4">Выходы АЦП</th>
                 </tr>
             </thead>    
             <thead>
@@ -173,16 +144,17 @@
 -->
 
 
-    <script src="lib/sjcl/sjcl.js"></script>
-    <script src="js/main.js"></script>
-        
-    <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
-    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-   
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
-    <script src="vue-dev/dist/vue.js"></script>
-    <script src="js/Sergeyvue.js"></script>
+<script src="lib/sjcl/sjcl.js"></script>
+<script src="js/main.js"></script>
+    
+<script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+<script src="vue-dev/dist/vue.js"></script>
+<script src="js/Sergeyvue.js"></script>
+<script src="js/dataControl.js"></script>
     
 </body>
 </html>

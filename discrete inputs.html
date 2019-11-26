@@ -105,10 +105,9 @@
     <h2 class="text-center">ЦАП входы</h2>
 
     <div id="data" class="row py-4" style="text-align: center;"  >
-        <template v-for="val in values">
+        <template v-for="(val, index) in dacValues">
             <div class="col">        
-                <p>DAC-0</p>
-                <p>{{ val }}</p>
+                <p>DAC-{{ index }}</p>
 
                 <div v-if="val === '0'">
                     <div class="circle"></div>
@@ -120,7 +119,7 @@
             </div>
         </template>
     </div>
-       
+</div>    
 
 <!-- <div id="modal-auth" v-show="showModal">
     <div class="modal-mask">

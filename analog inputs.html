@@ -34,14 +34,14 @@
 <!--Начало таблицы входов и выходов-->
 <div class="container-fluid">
     <div class="row">
-        <table id="data" class="table table-striped table table-hover col-xl-8 col-lg-8 col-md-8 col-sm-8 col-md-auto" style="text-align: center; " >
+        <table id="data" class="table table-striped  table-hover " style="text-align: center; " >
             <thead>
                 <tr>
-                    <th scope="col" colspan="4">Входы АЦП</th>
+                    <th scope="col" colspan="4">Входы</th>
                 </tr>
                 <tr>
                     <template v-for="(val, index) in adcValues">
-                            <th scope="col">ADC-{{ index }}</th> 
+                            <th scope="col">{{ index }}</th> 
                     </template>
                 </tr>
             </thead>
@@ -61,24 +61,26 @@
                 </tr>
                 <tr>
                     <template v-for="val in adcValues">
-                        <td scope="col">{{ val }}</td> 
+                        <td scope="col">{{ val }} В</td> 
                     </template>
                 </tr>
             </tbody>
         </table>
             
-        <table class="table table-striped table table-hover col-xl-4 col-lg-4 col-md-4 col-sm-4 col-md-auto " style="text-align: center;">
+        <table class="table table-striped  table-hover " style="text-align: center;">
             <thead>
                 <tr>
-                    <th scope="col" colspan="4">Выходы АЦП</th>
+                    <th scope="col" colspan="4">Выходы</th>
                 </tr>
             </thead>    
+            <div>
             <thead>
                 <tr>
-                    <th scope="col">ADC-0</th>
-                    <th scope="col">ADC-1</th>
+                    <th scope="col">0</th>
+                    <th scope="col">1</th>
                 </tr>
             </thead>
+            </div>
             <tbody>
                 <tr>
                     <td>

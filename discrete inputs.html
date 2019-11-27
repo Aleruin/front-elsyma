@@ -31,135 +31,129 @@
         </div>
     </nav>   
 </div>
-<!--Конец navbar-->
+<!--Конец navbar-->  
+<!--Конец таблицы входов-->
+<div class="container-fluid ">
+    <div class="row">
+            <table id="data" class="table table-hover" style="text-align: center;" >
+                <thead class="thead-inverse backgroundColorMainMenu ">
+                    <tr>
+                        <th scope="col" colspan="12">Входы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <template v-for="(val, index) in dacValues">
+                            <th scope="col">{{ index }}</th>
+                        </template>
+                    </tr>
+                    <tr>
+                        <template v-for="(val, index) in dacValues">
+                            <td>
+                                <div class="col">        
+                                    <div v-if="val === '0'">
+                                        <div class="circle green"></div>
+                                    </div>
+                                    <div v-else>
+                                        <div class="circle darkgray"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </template>
+                    </tr>
+                    <!--Начало временный кусок показания ради-->
+                    <tr>
+                        <template v-for="(val, index) in dacValues">
+                            <th scope="col">Состояние</th> 
+                        </template>
+                    </tr>
+                    <!--Конец временный кусок показания ради-->
+                </tbody>
+            </div>
+        </table>
+    </div>
+</div>  
+<!--Конец таблицы входов-->
 <!--Начало таблицы выходов-->
 <div class="container-fluid ">
-    <h2 class="text-center">ЦАП выходы </h2>
-    <div class="row py-4" style="text-align: center;"  >
-        <div class="col">
-            <p>DAC-0</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-1</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-2</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-3</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-4</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>DAC-5</p>
-            <div id="app5">
-                <div
-                    class="circle" 
-                    @click="isActive = !isActive"
-                    :class="getCssClasses"
-                ></div>
-            </div>
-        </div>
+    <div class="row">
+        <table id="data" class="table table-hover" style="text-align: center;" >
+            <thead class="thead-inverse backgroundColorMainMenu ">
+                <tr>
+                    <th scope="col" colspan="12">Выходы</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="app5">
+                            <div
+                                class="circle" 
+                                @click="isActive = !isActive"
+                                :class="getCssClasses"
+                            ></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="app6">
+                            <div
+                                class="circle" 
+                                @click="isActive = !isActive"
+                                :class="getCssClasses"
+                            ></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="app6">
+                            <div
+                                class="circle" 
+                                @click="isActive = !isActive"
+                                :class="getCssClasses"
+                            ></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="app6">
+                            <div
+                                class="circle" 
+                                @click="isActive = !isActive"
+                                :class="getCssClasses"
+                            ></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="app6">
+                            <div
+                                class="circle" 
+                                @click="isActive = !isActive"
+                                :class="getCssClasses"
+                            ></div>
+                        </div>
+                    </td>
+                    <tr>
+                        <th scope="col">Состояние</th>
+                        <th scope="col">Состояние</th>
+                        <th scope="col">Состояние</th>
+                        <th scope="col">Состояние</th>
+                        <th scope="col">Состояние</th>
+                    </tr>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div> 
-<!--Конец таблицы выходов-->    
+<!--Конец таблицы выходов-->
 
-<!--ЦАП входы-->
-<div class="container-fluid ">
-    <h2 class="text-center">ЦАП входы</h2>
+<script src="lib/sjcl/sjcl.js"></script>
+<script src="js/main.js"></script>
 
-    <div id="data" class="row py-4" style="text-align: center;"  >
-        <template v-for="(val, index) in dacValues">
-            <div class="col">        
-                <p>DAC-{{ index }}</p>
+<script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
-                <div v-if="val === '0'">
-                    <div class="circle"></div>
-                </div>
-                <div v-else>
-                    <div class="circle darkgray"></div>
-                </div>
-           
-            </div>
-        </template>
-    </div>
-</div>    
-
-<!-- <div id="modal-auth" v-show="showModal">
-    <div class="modal-mask">
-        <div class="modal-wrapper">
-            <div class="modal-table">
-                <div class="modal-row">
-                    <p class="welcome">Войти в систему</p>
-                    <hr>
-                </div>
-                <div class="modal-row">
-                    Введите имя пользователя:
-                </div>
-                <div class="modal-row">
-                    <input type="text" name="username" placeholder="Введите имя пользователя">
-                </div>
-                <empty-error v-if="this.emptyField"></empty-error>
-                <warning-error v-if="this.errorData"></warning-error>
-                <div class="modal-row">
-                    Введите пароль:
-                </div>
-                <div class="modal-row">
-                    <input type="password" name="password" placeholder="Введите пароль">
-                </div>
-                <div class="modal-row">
-                    <input type="submit" value="Войти" @click="compareHashesJSON">
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <script src="lib/sjcl/sjcl.js"></script>
-    <script src="js/main.js"></script>
-    
-    <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
-    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-    
-    <script src="dist/vue.js"></script>    
-    <script src="js/Sergeyvue.js"></script>
-    <script src="js/dataControl.js"></script>
+<script src="dist/vue.js"></script>    
+<script src="js/Sergeyvue.js"></script>
+<script src="js/dataControl.js"></script>
     
 </body>
 </html>

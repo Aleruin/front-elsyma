@@ -13,13 +13,37 @@ new Vue({
                         borderColor: 'rgba(0, 0, 0, 0.5)',
                         borderWidth: 1,
                         data: [0]
-                }]
+                    },
+                    {
+                        label: 'Dataset2',
+                        fill: false,
+                        backgroundColor: 'rgba(255, 69, 0, 0.5)',
+                        borderColor: 'rgba(255, 69, 0, 0.5)',
+                        borderWidth: 1,
+                        data: [0]
+                    },
+                    {
+                        label: 'Dataset3',
+                        fill: false,
+                        backgroundColor: 'rgba(75, 0, 130, 0.5)',
+                        borderColor: 'rgba(75, 0, 130, 0.5)',
+                        borderWidth: 1,
+                        data: [0]
+                    },
+                    {
+                        label: 'Dataset4',
+                        fill: false,
+                        backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                        borderColor: 'rgba(0, 0, 255, 0.5)',
+                        borderWidth: 1,
+                        data: [0]
+                    }]
             },
             options: {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero: true,
+                            suggestedMin: 50,
                             suggestedMax: 100
                         }
                     }]
@@ -45,11 +69,15 @@ new Vue({
         },
         loadData: function(chart) {
             this.config.type = 'line'
-            for (let i = this.history_container.length - 5; i < this.history_container.length - 1; i++) {
-                this.config.data.datasets[0].data.push(this.history_container[i])
-                console.log(this.history_container[i])
+            let index = this.history_container.length
+            for (let i = 0; i < this.config.data.datasets.length; i++) {
+                this.config.data.datasets[i].data.push(this.history_container[index - 4])
+                this.config.data.datasets[i].data.push(this.history_container[index - 3])
+                this.config.data.datasets[i].data.push(this.history_container[index - 2])
+                this.config.data.datasets[i].data.push(this.history_container[index - 1])
             }
-            
+            console.log(this.history_container)
+
             this.config.data.labels.push(this.time)
 
             this.time += 1

@@ -62,7 +62,7 @@ new Vue({
         {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://10.14.1.43/data");
+                xhr.open("GET", "data");
                 xhr.onload = () => resolve(xhr.response);
                 xhr.onerror = () => reject(xhr.statusText);
                 xhr.send();

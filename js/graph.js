@@ -1,7 +1,8 @@
 new Vue({                                                    
     el: '#container',                                            
     data: {                                                  
-        history_container: [],                                  
+        data_container: [],
+        history_container: [],
         config: {                                             
             type: 'line',                                          
             data: {                                           
@@ -63,7 +64,7 @@ new Vue({
             data: {                                                  
                 labels: [0],                                         
                     datasets: [{                                     
-                        label: 'Dataset1',                         
+                        label: 'АЦП-1',                         
                         fill: false,                               
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',     
                         borderColor: 'rgba(0, 0, 0, 0.5)',         
@@ -71,7 +72,7 @@ new Vue({
                         data: [0]                                    
                     },                                               
                     {                                                
-                        label: 'Dataset2',                           
+                        label: 'АЦП-2,                           
                         fill: false,                                 
                         backgroundColor: 'rgba(255, 69, 0, 0.5)',    
                         borderColor: 'rgba(255, 69, 0, 0.5)',        
@@ -79,7 +80,7 @@ new Vue({
                         data: [0]                                
                     },                                               
                     {                                                
-                        label: 'Dataset3',                           
+                        label: 'АЦП-3',                           
                         fill: false,                                 
                         backgroundColor: 'rgba(75, 0, 130, 0.5)',  
                         borderColor: 'rgba(75, 0, 130, 0.5)',      
@@ -87,7 +88,7 @@ new Vue({
                         data: [0]                                    
                     },                                               
                     {                                                
-                        label: 'Dataset4',                         
+                        label: 'АЦП-4',                         
                         fill: false,                               
                         backgroundColor: 'rgba(0, 0, 255, 0.5)',     
                         borderColor: 'rgba(0, 0, 255, 0.5)',         
@@ -115,19 +116,18 @@ new Vue({
             return Math.round(Math.random() * 100);                  
         },                                                           
         loadData: function(chart) {                                  
-            this.config.type = 'line'                                
-            let history_str = String(this.history_container[0])      
+            this.config.type = 'line'
+            let history_str = String(this.data_container[0])
                                                                      
-            let history_arr = history_str.split(',')               
-            history_arr.pop()                                      
-            console.log(history_arr)                                 
+            let history_arr = history_str.split(',')
+            history_arr.pop()
+            
+            this.history_container += history_arr
                                                                      
             this.config.data.datasets[3].data.push(history_arr.pop())
             this.config.data.datasets[2].data.push(history_arr.pop())
             this.config.data.datasets[1].data.push(history_arr.pop())
             this.config.data.datasets[0].data.push(history_arr.pop())
-                                                                     
-            //console.log(this.history_container.pop())              
                                                                      
             this.config.data.labels.push(this.time)                  
                                                                      
@@ -154,13 +154,13 @@ new Vue({
         getData: function()                                            
         {                                                            
             var self = this
-	    self.history_container = []                              
+	    self.data_container = []                              
             this.getJSON_data()                                      
             .then(function(res)                                      
             {                                                        
                 var aft_parse = JSON.parse(res)                      
-                self.history_container.push(aft_parse['ADC-val'] + ',')
-                //console.log(self.history_container)                  
+                self.data_container.push(aft_parse['ADC-val'] + ',')
+                //console.log(self.data_container)                  
             })                                                         
         }                                                              
     }                                                                  

@@ -36,6 +36,7 @@ new Vue({
         setInterval(function() {
             self.setTime(10);
             self.loadData(line);
+            self.getData();
         }, 1000)
     },
     methods: {
@@ -44,14 +45,15 @@ new Vue({
         },
         loadData: function(chart) {
             this.config.type = 'line'
-            this.config.data.datasets[0].data.push(this.randomScalingFactor())
+            for (let i = history_container.length - 1; i < history_container.length - 5; i--) {
+                this.config.data.datasets[0].data.push(this.history_container[i])
+            }
             this.config.data.labels.push(this.time)
 
             this.time += 1
 
             chart.update()
-        }
-        , 
+        }, 
         setTime: function(maxTime) {
             if( this.time >= maxTime-1 ) {
                 this.config.data.labels.shift()

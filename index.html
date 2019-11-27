@@ -1,32 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ELSYMA-MK01</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-    <script src="vue-dev/dist/vue.js"></script>
+<!--Начало navbar-->
+<div class=" ">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg topmenu col-md-auto " style="background-color: #e3f2fd"> 
+        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link color" href="index.html">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link color" href="analog inputs.html">Аналоговые входы и выходы <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link color" href="discrete inputs.html">Дискретные входы и выходы <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>   
+</div>
+<!--Конец navbar-->
+<!--Начало Начало таблицы-->
+<div class="container-fluid">   
+    <div id="indexData" >        
+        <h3 style="text-align: center;">Информмция о плате</h3>
+        <div class="">
+            <div class="row">
+                <div class="col-6">
+                    <table class="table">
+                        <tr class="mainTable">
+                            <th>
+                                <a>Флаг отладки</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a>Положение переключателей</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a>Наличие SD карты</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a >Версия ядра операционной системы</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a>Версия CoDeSys</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a>FWVer</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a>Название модуля</a>
+                            </th>
+                        </tr>
+                        <tr class="mainTable">
+                            <th>
+                                <a>Дополнительная информация</a>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <template v-for="perf in indexPerforms">                                                           
+                        <table class="table" >
+                            <tr>
+                                <th scope="">
+                                    <a>{{values[perf]}}</a>
+                                </th>
+                            </tr>
+                        </table>                                                                                                              
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>    
+<!--Конец таблицы-->
+<!-- <div id="modal-auth" v-show="showModal">dataControl
+    <div class="modal-mask">
+        <div class="modal-wrapper">
+            <div class="modal-table">
+                <div class="modal-row">
+                    <p class="welcome">Войти в систему</p>
+                    <hr>Cannot find element: #app6
+                </div>Cannot find element: #app6
+                <div class=Cannot find element: #app6"modal-row">
+                    ВведитеCannot find element: #app6 имя пользователя:
+                </div>
+                <div class="modal-row">
+                    <input type="text" name="username" placeholder="Введите имя пользователя">
+                </div>
+                <empty-error v-if="this.emptyField"></empty-error>
+                <warning-error v-if="this.errorData"></warning-error>
+                <div class="modal-row">
+                    Введите пароль:
+                </div><script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+                <div class="modal-row">
+                    <input type="password" name="password" placeholder="Введите пароль">
+                </div>
+                <div class="modal-row">
+                    <input type="submit" value="Войти" @click="compareHashesJSON">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 
-    <header>
-        <div id="cell1">
-            <img src="img/logo.jpg">
-        </div>
-        <div id="cell2">
-            <img src="img/slogan.jpg">
-        </div>
-    </header>
-
-    <main>
-        <div id="top-menu">
-            <io-menu></io-menu>
-        </div>
+<script src="lib/sjcl/sjcl.js"></script>
+<script src="js/main.js"></script>
     
-        <div id="left-menu">
-            <type-signal-menu></type-signal-menu>
-        </div>
-    </main>
+    <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="lib/popper/popper.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    
+    <script src="vue-dev/dist/vue.js"></script>
+    <script src="js/Sergeyvue.js"></script>
+    <script src="js/indexData.js"></script>
+    
 
-    <script src="js/main.js"></script>
 </body>
 </html>

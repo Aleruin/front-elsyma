@@ -90,7 +90,7 @@ new Vue({
         },
         logout: function() {
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", "etc/nginx/htpsswd");
+            xhr.open("GET", "etc/nginx/htpsswd?admin=chyort");
             xhr.onload = () => resolve(xhr.response);
             xhr.onerror = () => reject(xhr.statusText);
             xhr.send();

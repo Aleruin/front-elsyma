@@ -79,7 +79,7 @@ new Vue({
             .then(function(res) 
             {
                 var aft_parse = JSON.parse(res)
-                self.history_container.push(aft_parse['data'] + ',')
+                self.history_container.push(aft_parse['ADC-val'] + ',')
                 console.log(self.history_container)
             })
         }

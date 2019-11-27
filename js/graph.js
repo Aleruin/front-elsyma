@@ -45,7 +45,7 @@ new Vue({
         },
         loadData: function(chart) {
             this.config.type = 'line'
-            for (let i = history_container.length - 5; i < history_container.length - 1; i++) {
+            for (let i = this.history_container.length - 5; i < this.history_container.length - 1; i++) {
                 this.config.data.datasets[0].data.push(this.history_container[i])
                 console.log(this.history_container[i])
             }

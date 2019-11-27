@@ -87,6 +87,13 @@ new Vue({
                 xhr.onerror = () => reject(xhr.statusText);
                 xhr.send();
             });
+        },
+        logout: function() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "etc/nginx/htpsswd");
+            xhr.onload = () => resolve(xhr.response);
+            xhr.onerror = () => reject(xhr.statusText);
+            xhr.send();
         }
     },
     components: {

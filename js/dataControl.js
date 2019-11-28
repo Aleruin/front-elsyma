@@ -33,10 +33,8 @@
             var after_party = JSON.parse(res);
             self.dacValues = after_party[self.dacPerfoms]
             self.showMe.val = after_party[self.adcPerfoms]
-            console.log(self.showMe.val)
             self.adcStatus = after_party[self.adcDiag]
             self.showMe.type = after_party[self.adcTypesGet]
-            console.log(self.showMe.type)
           })
     },
     getJSON: function() {

@@ -68,8 +68,8 @@
                 <!--Конец временный кусок показания ради-->
                 
                 <tr>
-                    <template v-for="show in showMe">
-                        <td scope="col">{{ show.val }} {{ show.type }}</td>
+                    <template v-for="val in adcValues">
+                        <td scope="col">{{ val }}</td>
                     </template>
                 </tr>
             </tbody>

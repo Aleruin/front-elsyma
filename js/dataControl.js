@@ -10,9 +10,7 @@
     adcDiag: "ADC-diag",
     adcStatus: 0,
     adcTypesGet: "ADC-type",
-    showMe:[
-        {val: null, type: null}
-    ]
+    showMe:[]
   },
 
   created: function () {
@@ -32,10 +30,31 @@
           .then(function(res) {
             var after_party = JSON.parse(res);
             self.dacValues = after_party[self.dacPerfoms]
-            self.showMe.val = after_party[self.adcPerfoms]
+            self.adcValues = after_party[self.adcPerfoms]
             self.adcStatus = after_party[self.adcDiag]
-            self.showMe.type = after_party[self.adcTypesGet]
+            let temp = after_party[self.adcTypesGet]
+            for(let i = 0; i < 4; i++)
+            {
+                self.adcValues[i] += ' ' + self.compareTypes(temp[i])
+            }
           })
+    },
+    compareTypes: function(numType)
+    {
+        switch(numType){
+                case '0':
+                    return "Не подключен"
+                    break;
+                case '1':
+                    return "мА"
+                    break;
+                case '2':
+                    return "B"
+                    break;
+                default:
+                    return "°C"
+                    break;
+            }
     },
     getJSON: function() {
       return new Promise((resolve, reject) => {

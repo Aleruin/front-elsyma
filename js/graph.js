@@ -86,9 +86,9 @@ new Vue({
             this.time += 1                                           
             chart.update()                                           
         },
-        getType: function(type)
+        getType: function(numType)
         {
-            switch(type){
+            switch(numType){
                 case '0':
                     return "Не подключен"
                     break;

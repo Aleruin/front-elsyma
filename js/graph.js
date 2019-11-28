@@ -97,7 +97,7 @@ new Vue({
         {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "data");
+                xhr.open("GET", "http://192.168.56.101/data");
                 xhr.onload = () => resolve(xhr.response);
                 xhr.onerror = () => reject(xhr.statusText);          
                 xhr.send();                                            

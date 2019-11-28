@@ -53,21 +53,21 @@ new Vue({
             }                                                      
         },
 	time: 0                                                  
-    },                                                           
+    },                                                            
     mounted: function() {                                        
         let ctx = document.getElementById("chart").getContext("2d")
         let line = new Chart(ctx, this.config)                     
         let self = this                                            
                                                                    
         setInterval(function(){                                                               
-            self.setTime(10)
-            self.getData()
-            self.updateLabels()
-            self.loadData(line)
-        }, 1000)
-    },
-    methods: {
-        loadData: function(chart) {
+            self.setTime(10);                                      
+            self.loadData(line);                                   
+            self.getData();
+            self.updateLabels();
+        }, 1000)                                                   
+    },                                                             
+    methods: {                                                     
+        loadData: function(chart) {                                  
             this.config.type = 'line'
             let history_str = String(this.data_container[0])
 
@@ -84,6 +84,7 @@ new Vue({
             this.config.data.labels.push(this.time)                  
                                                                      
             this.time += 1                                           
+                                                                     
             chart.update()                                           
         },
         getType: function(numType)
@@ -122,10 +123,10 @@ new Vue({
                 const xhr = new XMLHttpRequest();
                 xhr.open("GET", "data");
                 xhr.onload = () => resolve(xhr.response);
-                xhr.onerror = () => reject(xhr.statusText);
+                xhr.onerror = () => reject(xhr.statusText);          
                 xhr.send();                                            
             });                                                      
-        },
+        },                                                           
         getData: function()                                            
         {                                                            
             var self = this
@@ -136,7 +137,8 @@ new Vue({
                 var aft_parse = JSON.parse(res)
                 self.data_container.push(aft_parse['ADC-val'] + ',')
                 self.type_container = (aft_parse['ADC-type'])
+                self.diag_container = (aft_parse['ADC-diag'])
             })
         }
     }
-});
+}); 

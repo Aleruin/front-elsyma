@@ -3,7 +3,7 @@
   el: '#indexData',                                            
                                                           
   data: {
-    indexPerforms: ["ExeptionFlag", "DIPSwitch", "SDOn", "OSCoreVer", "CSCoreVer", "FWVer", "RealModName", "ExtInfo"],                                                         
+    indexPerforms: ["Флаг отладки", "Положение переключателя", "Наличие карты памяти", "Версия ядра ОС", "Версия ядра CoDeSys", "Версия сборки компонент", "Имя модуля", "Доп информация"],                                                         
     values: null                                          
   },                          
                                                 

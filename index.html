@@ -10,87 +10,42 @@
 <body>
 <!--Начало navbar-->
 <div class=" ">
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg topmenu col-md-auto " style="background-color: #e3f2fd"> 
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg col-md-auto " style="background-color: #e3f2fd"> 
         <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link color" href="index.html">Главная <span class="sr-only">(current)</span></a>
+                    <a class="nav-link color" href="index.html" style="padding: 10px 20px">Главная <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link color" href="analog inputs.html">Аналоговые входы и выходы <span class="sr-only">(current)</span></a>
+                    <a class="nav-link color" href="analog inputs.html" style="padding: 10px 20px">Аналоговые входы и выходы <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link color" href="discrete inputs.html">Дискретные входы и выходы <span class="sr-only">(current)</span></a>
+                    <a class="nav-link color" href="discrete inputs.html" style="padding: 10px 20px">Дискретные входы и выходы <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <button id="logout" @click="logout">Выйти</button>
         </div>
     </nav>   
 </div>
 <!--Конец navbar-->
 <!--Начало Начало таблицы-->
 <div class="container-fluid">   
-    <div id="indexData" >        
-        <h3 style="text-align: center;">Информмция о плате</h3>
+    <div id="indexData" >
+               
+        <h3 style="text-align: center;">Информация о плате</h3>
         <div class="">
             <div class="row">
-                <div class="col-6">
-                    <table class="table">
-                        <tr class="mainTable">
-                            <th>
-                                <a>Флаг отладки</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a>Положение переключателей</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a>Наличие SD карты</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a >Версия ядра операционной системы</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a>Версия CoDeSys</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a>FWVer</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a>Название модуля</a>
-                            </th>
-                        </tr>
-                        <tr class="mainTable">
-                            <th>
-                                <a>Дополнительная информация</a>
-                            </th>
-                        </tr>
+                <div class="col-12">
+                    <table class="table table-hover" style="margin-bottom: 0px;">
+                        <template v-for="perf in indexPerforms">                                                           
+                                <tr>    
+                                    <th  class="mainTable " ><p>{{perf}} {{values[perf]}}</a></th>
+                                    <th  class="mainTable " ><a>{{values[perf]}}</a></th>
+                                </tr>    
+                        </template>
                     </table>
-                </div>
-                <div class="col-6">
-                    <template v-for="perf in indexPerforms">                                                           
-                        <table class="table" >
-                            <tr>
-                                <th scope="">
-                                    <a>{{values[perf]}}</a>
-                                </th>
-                            </tr>
-                        </table>                                                                                                              
-                    </template>
                 </div>
             </div>
         </div>
@@ -101,13 +56,13 @@
 <script src="lib/sjcl/sjcl.js"></script>
 <script src="js/main.js"></script>
     
-    <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
-    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-    
-    <script src="dist/vue.js"></script>
-    <script src="js/Sergeyvue.js"></script>
-    <script src="js/indexData.js"></script>
+<script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+<script src="dist/vue.js"></script>
+<script src="js/Sergeyvue.js"></script>
+<script src="js/indexData.js"></script>
     
 
 </body>

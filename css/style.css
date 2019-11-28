@@ -1,5 +1,6 @@
 /* Стили страницы */
 
+
 .circle {
     width: 60px;
     height: 60px;
@@ -24,10 +25,15 @@
     margin: 0;
 }
 
+.backgroundColorMainMenu {
+    background-color: rgba(138, 138, 133, 0.24);
+}
+
+/* Стили модального окна */
 .container {
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: centermainTable;
 }
 
 #logout {
@@ -44,7 +50,7 @@
 #logout:hover {
     background: rgb(112, 111, 111)
 }
-/* Стили модального окна */
+
 
 hr {
     margin-bottom: 0;

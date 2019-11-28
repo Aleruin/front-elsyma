@@ -11,20 +11,20 @@
 
 <!--Начало navbar-->
 <div class=" ">
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg topmenu col-md-auto " style="background-color: #e3f2fd"> 
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg col-md-auto " style="background-color: #e3f2fd"> 
         <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link color" href="index.html">Главная <span class="sr-only">(current)</span></a>
+                    <a class="nav-link color" href="index.html" style="padding: 10px 20px">Главная <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link color" href="analog inputs.html">Аналоговые входы и выходы <span class="sr-only">(current)</span></a>
+                    <a class="nav-link color" href="analog inputs.html" style="padding: 10px 20px">Аналоговые входы и выходы <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link color" href="discrete inputs.html">Дискретные входы и выходы <span class="sr-only">(current)</span></a>
+                    <a class="nav-link color" href="discrete inputs.html" style="padding: 10px 20px">Дискретные входы и выходы <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -34,18 +34,18 @@
 <!--Начало таблицы входов и выходов-->
 <div class="container-fluid">
     <div class="row">
-        <table id="data" class="table table-striped table table-hover col-xl-8 col-lg-8 col-md-8 col-sm-8 col-md-auto" style="text-align: center; " >
-            <thead>
+        <table id="data" class="table table-hover" style="text-align: center;" >
+            <thead class="thead-inverse backgroundColorMainMenu ">
                 <tr>
-                    <th scope="col" colspan="4">Входы АЦП</th>
-                </tr>
-                <tr>
-                    <template v-for="(val, index) in adcValues">
-                            <th scope="col">ADC-{{ index }}</th> 
-                    </template>
+                    <th scope="col" colspan="12">Входы</th>
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <template v-for="(val, index) in adcValues">
+                        <th scope="col">{{ index }}</th> 
+                    </template>
+                </tr>
                 <tr>
                     <!--Состояние АЦП: работает/не работает-->
                     <template v-for="stat in adcStatus">
@@ -56,29 +56,37 @@
                             <div v-else>
                                 <div class="circle red"></div>
                             </div>
-                         </td>
+                        </td>
                     </template>
                 </tr>
+                <!--Начало временный кусок показания ради-->
+                <tr>
+                    <template v-for="(val, index) in adcValues">
+                            <th scope="col">Состояние</th> 
+                    </template>
+                </tr>
+                <!--Конец временный кусок показания ради-->
+                
                 <tr>
                     <template v-for="val in adcValues">
-                        <td scope="col">{{ val }}</td> 
+                        <td scope="col">{{ val }}</td>
                     </template>
                 </tr>
             </tbody>
         </table>
             
-        <table class="table table-striped table table-hover col-xl-4 col-lg-4 col-md-4 col-sm-4 col-md-auto " style="text-align: center;">
-            <thead>
+        <table class="table table-hover" style="text-align: center;">
+            <thead class="thead-inverse backgroundColorMainMenu ">
                 <tr>
-                    <th scope="col" colspan="4">Выходы АЦП</th>
+                    <th scope="col" colspan="12">Выходы</th>
                 </tr>
             </thead>    
-            <thead>
+            <tbody>
                 <tr>
-                    <th scope="col">ADC-0</th>
-                    <th scope="col">ADC-1</th>
+                    <th scope="col">0</th>
+                    <th scope="col">1</th>
                 </tr>
-            </thead>
+            
             <tbody>
                 <tr>
                     <td>
@@ -99,6 +107,10 @@
                             ></div>
                         </div>
                     </td>
+                    <tr>
+                            <th scope="col">Состояние</th>
+                            <th scope="col">Состояние</th>
+                        </tr>
                 </tr>
                 <tr>
                     <td>234</td>
@@ -107,43 +119,20 @@
             </tbody>
         </table>
     </div>
-</div>          
- <!--Конец таблицы входов и выходов-->  
-          
-
-<!--
-<div id="modal-auth" v-show="showModal">
-    <div class="modal-mask">
-        <div class="modal-wrapper">
-            <div class="modal-table">
-                <div class="modal-row">
-                    <p class="welcome">Войти в систему</p>
-                    <hr>
-                </div>
-                <div class="modal-row">
-                    Введите имя пользователя:
-                </div>
-                <div class="modal-row">
-                    <input type="text" name="username" placeholder="Введите имя пользователя">
-                </div>
-                <empty-error v-if="this.emptyField"></empty-error>
-                <warning-error v-if="this.errorData"></warning-error>
-                <div class="modal-row">
-                    Введите пароль:
-                </div>
-                <div class="modal-row">
-                    <input type="password" name="password" placeholder="Введите пароль">
-                </div>
-                <div class="modal-row">
-                    <input type="submit" value="Войти" @click="compareHashesJSON">
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
--->
 
+  <!-- Определение местоположения и размера диаграммы -->
+  <div class="container justify-content-center">
+    <div id="container" style="border:1px solid #ccc; width:100%;height:100%;padding:5px">
+        <canvas id="chart"></canvas> <!--width="540" height="360"-->
+    </div>
+  </div>
 
+  <script src="lib/chartjs/Chart.min.js"></script>
+  <script src="dist/vue.js"></script>
+  <script src="js/graph.js"></script>
+ <!--Конец таблицы входов и выходов-->  
+ 
 <script src="lib/sjcl/sjcl.js"></script>
 <script src="js/main.js"></script>
     

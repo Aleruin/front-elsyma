@@ -68,8 +68,8 @@
                 <!--Конец временный кусок показания ради-->
                 
                 <tr>
-                    <template v-for="val in adcValues">
-                        <td scope="col">{{ val }} В</td> 
+                    <template v-for="show in showMe">
+                        <td scope="col">{{ show.val }} {{ show.type }}</td>
                     </template>
                 </tr>
             </tbody>
@@ -119,9 +119,20 @@
             </tbody>
         </table>
     </div>
-</div>          
- <!--Конец таблицы входов и выходов-->  
+</div>
 
+  <!-- Определение местоположения и размера диаграммы -->
+  <div class="container justify-content-center">
+    <div id="container" style="border:1px solid #ccc; width:100%;height:100%;padding:5px">
+        <canvas id="chart"></canvas> <!--width="540" height="360"-->
+    </div>
+  </div>
+
+  <script src="lib/chartjs/Chart.min.js"></script>
+  <script src="dist/vue.js"></script>
+  <script src="js/graph.js"></script>
+ <!--Конец таблицы входов и выходов-->  
+ 
 <script src="lib/sjcl/sjcl.js"></script>
 <script src="js/main.js"></script>
     

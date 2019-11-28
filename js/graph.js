@@ -3,8 +3,6 @@ new Vue({
     data: {                                                  
         data_container: [],
         history_container: [],
-        type_container: [],
-        diag_container: [],
         config: {
             type: 'line',
             data: {
@@ -112,12 +110,6 @@ new Vue({
             {
                 var aft_parse = JSON.parse(res)
                 self.data_container.push(aft_parse['ADC-val'] + ',')
-                self.type_container = (aft_parse['ADC-type'])
-                console.log(self.type_container)
-                console.log(typeof(self.type_container))
-                self.diag_container = (aft_parse['ADC-diag'])
-                console.log(self.diag_container)
-                console.log(typeof(self.diag_container))
             })
         }
     }

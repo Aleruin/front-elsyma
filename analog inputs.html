@@ -50,14 +50,23 @@
                     <!--Состояние АЦП: работает/не работает-->
                     <template v-for="stat in adcStatus">
                         <td>
-                            <div v-if="stat === '0'">
+                            <div v-if="stat === '0' ">
                                 <div class="circle green"></div>
+                                <p>Канал обрабатывается</p>
                             </div>
-                            <div v-else>
+                            <div v-else >
                                 <div class="circle red"></div>
+                                <p v-show=" stat === '1' " >Не обрабатывается</p>
+                                <p v-show=" stat === '2'">Значение вне диапозона измерения</p>
+                                <p v-show=" stat === '3'">Значение вне диапозона измерения</p>
+                                <p v-show=" stat === '4'">Ошибка работы АЦП</p>
+                                <p v-show=" stat === '5'">Ошибка работы АЦП</p>
+                                <p v-show=" stat === '128'">Нет обновлений</p>
+                                <p v-show=" stat === '129'">Нет обнослений</p>
                             </div>
                         </td>
                     </template>
+                </tr>
                 </tr>
                 <!--Начало временный кусок показания ради-->
                 <tr>

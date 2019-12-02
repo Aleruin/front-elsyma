@@ -2,7 +2,6 @@ new Vue({
     el: '#container',                                            
     data: {                                                  
         data_container: [],
-        history_container: [],
         type_container: [],
         config: {
             type: 'line',
@@ -64,7 +63,7 @@ new Vue({
             self.loadData(line);                                   
             self.getData();
             self.updateLabels();
-        }, 1000)                                                   
+        }, 3000)                                                   
     },                                                             
     methods: {                                                     
         loadData: function(chart) {                                  
@@ -73,8 +72,6 @@ new Vue({
 
             let history_arr = history_str.split(',')
             history_arr.pop()
-            
-            this.history_container += history_arr
                                                                      
             this.config.data.datasets[3].data.push(history_arr.pop())
             this.config.data.datasets[2].data.push(history_arr.pop())

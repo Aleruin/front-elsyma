@@ -75,11 +75,15 @@ new Vue({
             history_arr.pop()
             
             this.history_container += history_arr
-                                                                     
-            this.config.data.datasets[3].data.push(history_arr.pop())
-            this.config.data.datasets[2].data.push(history_arr.pop())
-            this.config.data.datasets[1].data.push(history_arr.pop())
-            this.config.data.datasets[0].data.push(history_arr.pop())
+                                                           
+            for (let i = 3; i >= 0; i--) {
+                this.config.data.datasets[i].data.push(history_arr.pop())
+            }
+            
+            // this.config.data.datasets[3].data.push(history_arr.pop())
+            // this.config.data.datasets[2].data.push(history_arr.pop())
+            // this.config.data.datasets[1].data.push(history_arr.pop())
+            // this.config.data.datasets[0].data.push(history_arr.pop())
                                                                      
             this.config.data.labels.push(this.time)                  
                                                                      
@@ -106,15 +110,17 @@ new Vue({
         },
         updateLabels: function()
         {
-            this.config.data.datasets[0].label = this.getType(String(this.type_container[0]))
-            this.config.data.datasets[1].label = this.getType(String(this.type_container[1]))
-            this.config.data.datasets[2].label = this.getType(String(this.type_container[2]))
-            this.config.data.datasets[3].label = this.getType(String(this.type_container[3]))
+            for (let i = 0; i > 3; i++) {
+                this.config.data.datasets[i].label = this.getType(String(this.type_container[i]))
+            }
         },
         setTime: function(maxTime) {
             if( this.time >= maxTime-1 ) {
                 this.config.data.labels.shift()
-                this.config.data.datasets[0].data.shift()
+
+                for (let i = 0; i < 3; i++) {
+                    this.config.data.datasets[0].data.shift()
+                }
             }
         },
         getJSON_data: function()
@@ -129,12 +135,12 @@ new Vue({
         },                                                           
         getData: function()                                            
         {                                                            
-            var self = this
+            let self = this
             self.data_container = []
             this.getJSON_data()
             .then(function(res)
             {
-                var aft_parse = JSON.parse(res)
+                let aft_parse = JSON.parse(res)
                 self.data_container.push(aft_parse['ADC-val'] + ',')
                 self.type_container = (aft_parse['ADC-type'])
                 self.diag_container = (aft_parse['ADC-diag'])

@@ -29,8 +29,25 @@
     background-color: rgba(138, 138, 133, 0.24);
 }
 
+/* Для вывода текущих значений */
+.adc-value {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.adc-cont {
+    display: flex;
+    flex-flow: nowrap;
+    margin: 10px;
+}
+
+#container {
+    display: flex;
+} 
+
 /* Стили модального окна */
-.container {
+/* .container {
     height: 100%;
     display: flex;
     align-items: centermainTable;
@@ -108,4 +125,4 @@ input[type="text"], input[type="password"] {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-}
+} */

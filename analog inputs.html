@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-
+<script src="dist/vue.js"></script>
 <!--Начало navbar-->
 <div class=" ">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg col-md-auto " style="background-color: #e3f2fd"> 
@@ -124,13 +124,17 @@
   <!-- Определение местоположения и размера диаграммы -->
   <div class="container justify-content-center">
     <div id="container" style="border:1px solid #ccc; width:100%;height:100%;padding:5px">
-        <canvas id="chart"></canvas> <!--width="540" height="360"-->
+        <canvas id="chart"></canvas> 
+        <div class="adc-value" >
+            <div class="adc-cont" v-for="data in currentData">
+                ADC: {{ data.value }}
+            </div>
+        </div>
     </div>
   </div>
 
   <script src="lib/chartjs/Chart.min.js"></script>
-  <script src="dist/vue.js"></script>
-  <script src="js/graph.js"></script>
+  <script src="js/localGraph.js"></script>
  <!--Конец таблицы входов и выходов-->  
  
 <script src="lib/sjcl/sjcl.js"></script>

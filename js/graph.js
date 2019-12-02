@@ -63,7 +63,7 @@ new Vue({
             self.loadData(line);                                   
             self.getData();
             self.updateLabels();
-        }, 3000)                                                   
+        }, 1000)                                                   
     },                                                             
     methods: {                                                     
         loadData: function(chart) {                                  
@@ -73,10 +73,14 @@ new Vue({
             let history_arr = history_str.split(',')
             history_arr.pop()
                                                                      
-            this.config.data.datasets[3].data.push(history_arr.pop())
-            this.config.data.datasets[2].data.push(history_arr.pop())
-            this.config.data.datasets[1].data.push(history_arr.pop())
-            this.config.data.datasets[0].data.push(history_arr.pop())
+            for (let i = 3; i >= 0; i--) {
+                this.config.data.datasets[i].data.push(history_arr.pop())
+            }
+
+            // this.config.data.datasets[3].data.push(history_arr.pop())
+            // this.config.data.datasets[2].data.push(history_arr.pop())
+            // this.config.data.datasets[1].data.push(history_arr.pop())
+            // this.config.data.datasets[0].data.push(history_arr.pop())
                                                                      
             this.config.data.labels.push(this.time)                  
                                                                      
@@ -103,15 +107,25 @@ new Vue({
         },
         updateLabels: function()
         {
-            this.config.data.datasets[0].label = this.getType(String(this.type_container[0]))
-            this.config.data.datasets[1].label = this.getType(String(this.type_container[1]))
-            this.config.data.datasets[2].label = this.getType(String(this.type_container[2]))
-            this.config.data.datasets[3].label = this.getType(String(this.type_container[3]))
+            for (let i = 0; i < 4; i++) {
+                this.config.data.datasets[i].label = this.getType(String(this.type_container[i]))
+            }
+            // this.config.data.datasets[0].label = this.getType(String(this.type_container[0]))
+            // this.config.data.datasets[1].label = this.getType(String(this.type_container[1]))
+            // this.config.data.datasets[2].label = this.getType(String(this.type_container[2]))
+            // this.config.data.datasets[3].label = this.getType(String(this.type_container[3]))
         },
         setTime: function(maxTime) {
             if( this.time >= maxTime-1 ) {
                 this.config.data.labels.shift()
-                this.config.data.datasets[0].data.shift()
+                
+                for (let i = 0; i < 4; i++) {
+                    this.config.data.datasets[i].data.shift()
+                }
+                // this.config.data.datasets[0].data.shift()
+                // this.config.data.datasets[1].data.shift()
+                // this.config.data.datasets[2].data.shift()
+                // this.config.data.datasets[3].data.shift()
             }
         },
         getJSON_data: function()

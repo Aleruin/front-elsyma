@@ -89,13 +89,13 @@ new Vue({
                         line.update();
                     } 
                     break;
-                case "ArrowUp":
+                case "KeyW":
                     if (line.options.scales.yAxes[0].ticks.max < 100) {
                         line.options.scales.yAxes[0].ticks.max += 2;
                         line.update();
                     } 
                     break;
-                case "ArrowDown":
+                case "KeyS":
                     if (line.options.scales.yAxes[0].ticks.max > 3) {
                         line.options.scales.yAxes[0].ticks.max -= 2;
                         line.update();

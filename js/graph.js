@@ -2,7 +2,6 @@ new Vue({
     el: '#container',                                            
     data: {                                                  
         data_container: [],
-        history_container: [],
         type_container: [],
         config: {
             type: 'line',
@@ -45,14 +44,20 @@ new Vue({
                 scales: {                                            
                     yAxes: [{                                        
                         ticks: {                           
-                            suggestedMin: 0,                        
-                            suggestedMax: 10                         
+                            min: 0,
+                            max: 100                         
                         }                                            
+                    }],
+                    xAxes: [{
+                        ticks: {
+                          min: 0,
+                          max: 0
+                        }
                     }]                                               
                 }                                                  
             }                                                      
         },
-	time: 0                                                  
+	time: 1                                               
     },                                                            
     mounted: function() {                                        
         let ctx = document.getElementById("chart").getContext("2d")
@@ -60,11 +65,58 @@ new Vue({
         let self = this                                            
                                                                    
         setInterval(function(){                                                               
-            self.setTime(10);                                      
+            // self.setTime(10);                                      
             self.loadData(line);                                   
             self.getData();
             self.updateLabels();
-        }, 1000)                                                   
+        }, 3000) 
+
+        console.log(line.options.scales.xAxes[0].ticks.max)
+
+        document.addEventListener('keydown', function(event) {
+            switch(event.code) {
+                case "ArrowLeft": 
+                    if (line.options.scales.xAxes[0].ticks.max > 5) {
+                        console.log('Max: ' + line.options.scales.xAxes[0].ticks.max)
+                        line.options.scales.xAxes[0].ticks.max -= 1;
+                        line.update();
+                    } 
+                    break;
+                case "ArrowRight": 
+                    if (line.options.scales.xAxes[0].ticks.max < line.config.data.datasets[0].data.length) {
+                        console.log('Max: ' + line.options.scales.xAxes[0].ticks.max)
+                        line.options.scales.xAxes[0].ticks.max += 1;
+                        line.update();
+                    } 
+                    break;
+                case "ArrowUp":
+                    if (line.options.scales.yAxes[0].ticks.max < 100) {
+                        line.options.scales.yAxes[0].ticks.max += 5;
+                        line.update();
+                    } 
+                    break;
+                case "ArrowDown":
+                    if (line.options.scales.yAxes[0].ticks.max > 10) {
+                        line.options.scales.yAxes[0].ticks.max -= 5;
+                        line.update();
+                    } 
+                    break;
+                case "KeyA":
+                    if (line.options.scales.xAxes[0].ticks.min >= 0) {
+                        console.log('Min: ' + line.options.scales.xAxes[0].ticks.min)
+                        line.options.scales.xAxes[0].ticks.min -= 1;
+                        line.update();
+                    } 
+                    break;
+                case "KeyD":
+                    if (line.options.scales.xAxes[0].ticks.min < line.options.scales.xAxes[0].ticks.max - 2) {
+                        console.log('Min: ' + line.options.scales.xAxes[0].ticks.min)
+                        line.options.scales.xAxes[0].ticks.min += 1;
+                        line.update();
+                    } 
+                    break;
+            }
+        });
     },                                                             
     methods: {                                                     
         loadData: function(chart) {                                  
@@ -73,13 +125,18 @@ new Vue({
 
             let history_arr = history_str.split(',')
             history_arr.pop()
-            
-            this.history_container += history_arr
+            console.log(chart.options.scales.xAxes[0].ticks.max)
+            chart.options.scales.xAxes[0].ticks.max += 1;
+
                                                                      
-            this.config.data.datasets[3].data.push(history_arr.pop())
-            this.config.data.datasets[2].data.push(history_arr.pop())
-            this.config.data.datasets[1].data.push(history_arr.pop())
-            this.config.data.datasets[0].data.push(history_arr.pop())
+            for (let i = 3; i >= 0; i--) {
+                this.config.data.datasets[i].data.push(history_arr.pop())
+            }
+
+            // this.config.data.datasets[3].data.push(history_arr.pop())
+            // this.config.data.datasets[2].data.push(history_arr.pop())
+            // this.config.data.datasets[1].data.push(history_arr.pop())
+            // this.config.data.datasets[0].data.push(history_arr.pop())
                                                                      
             this.config.data.labels.push(this.time)                  
                                                                      
@@ -106,22 +163,32 @@ new Vue({
         },
         updateLabels: function()
         {
-            this.config.data.datasets[0].label = this.getType(String(this.type_container[0]))
-            this.config.data.datasets[1].label = this.getType(String(this.type_container[1]))
-            this.config.data.datasets[2].label = this.getType(String(this.type_container[2]))
-            this.config.data.datasets[3].label = this.getType(String(this.type_container[3]))
+            for (let i = 0; i < 4; i++) {
+                this.config.data.datasets[i].label = this.getType(String(this.type_container[i]))
+            }
+            // this.config.data.datasets[0].label = this.getType(String(this.type_container[0]))
+            // this.config.data.datasets[1].label = this.getType(String(this.type_container[1]))
+            // this.config.data.datasets[2].label = this.getType(String(this.type_container[2]))
+            // this.config.data.datasets[3].label = this.getType(String(this.type_container[3]))
         },
         setTime: function(maxTime) {
             if( this.time >= maxTime-1 ) {
                 this.config.data.labels.shift()
-                this.config.data.datasets[0].data.shift()
+                
+                for (let i = 0; i < 4; i++) {
+                    this.config.data.datasets[i].data.shift()
+                }
+                // this.config.data.datasets[0].data.shift()
+                // this.config.data.datasets[1].data.shift()
+                // this.config.data.datasets[2].data.shift()
+                // this.config.data.datasets[3].data.shift()
             }
         },
         getJSON_data: function()
         {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://192.168.56.101/data");
+                xhr.open("GET", "data");
                 xhr.onload = () => resolve(xhr.response);
                 xhr.onerror = () => reject(xhr.statusText);          
                 xhr.send();                                            

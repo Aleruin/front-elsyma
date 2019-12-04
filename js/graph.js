@@ -91,13 +91,13 @@ new Vue({
                     break;
                 case "ArrowUp":
                     if (line.options.scales.yAxes[0].ticks.max < 100) {
-                        line.options.scales.yAxes[0].ticks.max += 5;
+                        line.options.scales.yAxes[0].ticks.max += 2;
                         line.update();
                     } 
                     break;
                 case "ArrowDown":
-                    if (line.options.scales.yAxes[0].ticks.max > 10) {
-                        line.options.scales.yAxes[0].ticks.max -= 5;
+                    if (line.options.scales.yAxes[0].ticks.max > 3) {
+                        line.options.scales.yAxes[0].ticks.max -= 2;
                         line.update();
                     } 
                     break;

@@ -33,49 +33,45 @@
 <!--Конец таблицы входов-->
 <div class="container-fluid ">
     <div class="row">
-            <table id="data" class="table table-hover" style="text-align: center;" >
-                <thead class="thead-inverse backgroundColorMainMenu ">
-                    <tr>
-                        <th scope="col" colspan="12">Входы</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <template v-for="(val, index) in dacValues">
-                            <th scope="col">{{ index }}</th>
-                        </template>
-                    </tr>
-                    <tr>
-                        <template v-for="(val, index) in dacValues">
-                            <td>
-                                <div class="col">        
-                                    <div v-if="val === '0'">
-                                        <div class="circle green"></div>
-                                    </div>
-                                    <div v-else>
-                                        <div class="circle darkgray"></div>
-                                    </div>
+        <table id="data" class="table table-hover" style="text-align: center;" >
+            <thead class="thead-inverse backgroundColorMainMenu ">
+                <tr>
+                    <th scope="col" colspan="12">Входы</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <template v-for="(val, index) in dacValues">
+                        <th scope="col">{{ index }}</th>
+                    </template>
+                </tr>
+                <tr>
+                    <template v-for="(val, index) in dacValues">
+                        <td>
+                            <div class="col">        
+                                <div v-if="val === '0'">
+                                    <div class="circle green"></div>
                                 </div>
-                            </td>
-                        </template>
-                    </tr>
-                    <!--Начало временный кусок показания ради-->
-                    <tr>
-                        <template v-for="(val, index) in dacValues">
-                            <th scope="col">Состояние</th> 
-                        </template>
-                    </tr>
-                    <!--Конец временный кусок показания ради-->
-                </tbody>
-            </div>
+                                <div v-else>
+                                    <div class="circle darkgray"></div>
+                                </div>
+                                <!--Начало временный кусок показания ради-->
+                                <p>Состояние</p>
+                                <!--Конец временный кусок показания ради-->
+                            </div>
+                        </td>
+                    </template>
+                </tr>
+            </tbody>
         </table>
     </div>
+
 </div>  
 <!--Конец таблицы входов-->
 <!--Начало таблицы выходов-->
 <div class="container-fluid ">
     <div class="row">
-        <table id="data" class="table table-hover" style="text-align: center;" >
+        <table id="output-list" class="table table-hover" style="text-align: center;" >
             <thead class="thead-inverse backgroundColorMainMenu ">
                 <tr>
                     <th scope="col" colspan="12">Выходы</th>
@@ -83,58 +79,23 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>
-                        <div id="app5">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app6">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app6">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app6">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="app6">
-                            <div
-                                class="circle" 
-                                @click="isActive = !isActive"
-                                :class="getCssClasses"
-                            ></div>
-                        </div>
-                    </td>
-                    <tr>
-                        <th scope="col">Состояние</th>
-                        <th scope="col">Состояние</th>
-                        <th scope="col">Состояние</th>
-                        <th scope="col">Состояние</th>
-                        <th scope="col">Состояние</th>
-                    </tr>
+                    <template v-for="(item, index) in dacItems">
+                        <th scope="col">{{ index }}</th>
+                    </template>
+                </tr>
+                <tr>
+                    <template v-for="(item, index) in dacItems">
+                        <td>
+                            <div class="col">        
+                                <div
+                                    class="circle" 
+                                    @click="togglePurchased(item)"
+                                    :class="{activeOutput: item.isActive}"
+                                ></div>
+                                <p>{{ item.state }}</p>
+                            </div>
+                        </td>
+                    </template>
                 </tr>
             </tbody>
         </table>
@@ -143,14 +104,13 @@
 <!--Конец таблицы выходов-->
 
 <script src="lib/sjcl/sjcl.js"></script>
-<script src="js/main.js"></script>
 
 <script src="lib/jquery/jquery-3.3.1.slim.min.js"></script>
 <script src="lib/popper/popper.min.js"></script>
 <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
 <script src="dist/vue.js"></script>    
-<script src="js/Sergeyvue.js"></script>
+<script src="js/btnControl.js"></script>
 <script src="js/dataControl.js"></script>
     
 </body>

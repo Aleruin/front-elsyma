@@ -125,9 +125,9 @@ new Vue({
 
             let history_arr = history_str.split(',')
             history_arr.pop()
+            
             console.log(chart.options.scales.xAxes[0].ticks.max)
             chart.options.scales.xAxes[0].ticks.max += 1;
-
                                                                      
             for (let i = 3; i >= 0; i--) {
                 this.config.data.datasets[i].data.push(history_arr.pop())

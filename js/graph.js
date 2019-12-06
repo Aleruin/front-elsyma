@@ -66,9 +66,9 @@ new Vue({
                                                                    
         setInterval(function(){                                                               
             // self.setTime(10);                                      
-            self.loadData(line);                                   
-            self.getData();
-            self.updateLabels();
+            self.loadData(line)                                   
+            self.getData()
+            self.updateLabels()
         }, 3000) 
 
         console.log(line.options.scales.xAxes[0].ticks.max)
@@ -77,46 +77,84 @@ new Vue({
             switch(event.code) {
                 case "ArrowLeft": 
                     if (line.options.scales.xAxes[0].ticks.max > 5) {
-                        console.log('Max: ' + line.options.scales.xAxes[0].ticks.max)
-                        line.options.scales.xAxes[0].ticks.max -= 1;
+                        line.options.scales.xAxes[0].ticks.max -= 1
                         line.update();
                     } 
-                    break;
+                    break
                 case "ArrowRight": 
                     if (line.options.scales.xAxes[0].ticks.max < line.config.data.datasets[0].data.length) {
-                        console.log('Max: ' + line.options.scales.xAxes[0].ticks.max)
-                        line.options.scales.xAxes[0].ticks.max += 1;
-                        line.update();
+                        line.options.scales.xAxes[0].ticks.max += 1
+                        line.update()
                     } 
-                    break;
+                    break
                 case "KeyW":
                     if (line.options.scales.yAxes[0].ticks.max < 100) {
-                        line.options.scales.yAxes[0].ticks.max += 2;
+                        line.options.scales.yAxes[0].ticks.max += 2
                         line.update();
                     } 
-                    break;
+                    break
                 case "KeyS":
                     if (line.options.scales.yAxes[0].ticks.max > 3) {
-                        line.options.scales.yAxes[0].ticks.max -= 2;
-                        line.update();
+                        line.options.scales.yAxes[0].ticks.max -= 2
+                        line.update()
                     } 
-                    break;
+                    break
                 case "KeyA":
                     if (line.options.scales.xAxes[0].ticks.min >= 0) {
-                        console.log('Min: ' + line.options.scales.xAxes[0].ticks.min)
-                        line.options.scales.xAxes[0].ticks.min -= 1;
-                        line.update();
+                        line.options.scales.xAxes[0].ticks.min -= 1
+                        line.update()
                     } 
-                    break;
+                    break
                 case "KeyD":
                     if (line.options.scales.xAxes[0].ticks.min < line.options.scales.xAxes[0].ticks.max - 2) {
-                        console.log('Min: ' + line.options.scales.xAxes[0].ticks.min)
-                        line.options.scales.xAxes[0].ticks.min += 1;
-                        line.update();
+                        line.options.scales.xAxes[0].ticks.min += 1
+                        line.update()
                     } 
-                    break;
+                    break
             }
-        });
+        })
+
+        document.getElementById('arrow-up').addEventListener('click', function(event) {
+            if (line.options.scales.yAxes[0].ticks.max < 100) {
+                line.options.scales.yAxes[0].ticks.max += 5
+                line.update()
+            } 
+        })
+    
+        document.getElementById('arrow-down').addEventListener('click', function(event) {
+            if (line.options.scales.yAxes[0].ticks.max > 10) {
+                line.options.scales.yAxes[0].ticks.max -= 5
+                line.update()
+            } 
+        })
+    
+        document.getElementById('arrow-left').addEventListener('click', function(event) {
+            if (line.options.scales.xAxes[0].ticks.max > 5) {
+                line.options.scales.xAxes[0].ticks.max -= 1
+                line.update()
+            } 
+        })
+        
+        document.getElementById('arrow-right').addEventListener('click', function(event) {
+            if (line.options.scales.xAxes[0].ticks.max < line.config.data.datasets[0].data.length) {
+                line.options.scales.xAxes[0].ticks.max += 1
+                line.update()
+            }  
+        })
+    
+        document.getElementById('arrow-zero-left').addEventListener('click', function(event) {
+            if (line.options.scales.xAxes[0].ticks.min >= 0) {
+                line.options.scales.xAxes[0].ticks.min -= 1
+                line.update()
+            } 
+        })
+        
+        document.getElementById('arrow-zero-right').addEventListener('click', function(event) {
+            if (line.options.scales.xAxes[0].ticks.min < line.options.scales.xAxes[0].ticks.max - 2) {
+                line.options.scales.xAxes[0].ticks.min += 1
+                line.update()
+            } 
+        })
     },                                                             
     methods: {                                                     
         loadData: function(chart) {                                  

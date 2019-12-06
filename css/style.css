@@ -48,3 +48,66 @@ hr {
     font-weight: bold;
     text-align: center;
 }
+
+/* Стрелки */
+.arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #arrow-up {
+    width: 0; 
+    height: 0; 
+    
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent; 
+    
+    border-bottom: 20px solid grey; 
+  }
+  
+  #arrow-down {
+    width: 0; 
+    height: 0; 
+    
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent; 
+    
+    border-top: 20px solid grey; 
+  }
+  
+  #arrow-right, #arrow-zero-right {
+    width: 0; 
+    height: 0; 
+    margin-left: 10px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    
+    border-left: 20px solid grey; 
+  }
+  
+  #arrow-left, #arrow-zero-left {
+    width: 0; 
+    height: 0;
+    margin-left: 5px; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    
+    border-right: 20px solid grey; 
+  }
+  
+  #arrow-up:hover {
+    border-bottom: 20px solid rgb(131, 235, 131);
+  }
+  
+  #arrow-down:hover {
+    border-top: 20px solid rgb(131, 235, 131);
+  }
+  
+  #arrow-left:hover, #arrow-zero-left:hover {
+    border-right: 20px solid rgb(131, 235, 131);
+  }
+  
+  #arrow-right:hover, #arrow-zero-right:hover {
+    border-left: 20px solid rgb(131, 235, 131);
+  }

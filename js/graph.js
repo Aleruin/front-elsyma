@@ -76,7 +76,7 @@ new Vue({
         document.addEventListener('keydown', function(event) {
             switch(event.code) {
                 case "ArrowLeft": 
-                    if (line.options.scales.xAxes[0].ticks.max > 5) {
+                    if (line.options.scales.xAxes[0].ticks.max > line.options.scales.xAxes[0].ticks.min + 1) {
                         line.options.scales.xAxes[0].ticks.max -= 1
                         line.update();
                     } 
@@ -102,7 +102,7 @@ new Vue({
                 case "KeyA":
                     if (line.options.scales.xAxes[0].ticks.min >= 0) {
                         line.options.scales.xAxes[0].ticks.min -= 1
-                        line.update()
+                        line.update() 
                     } 
                     break
                 case "KeyD":
@@ -116,20 +116,20 @@ new Vue({
 
         document.getElementById('arrow-up').addEventListener('click', function(event) {
             if (line.options.scales.yAxes[0].ticks.max < 100) {
-                line.options.scales.yAxes[0].ticks.max += 5
+                line.options.scales.yAxes[0].ticks.max += 4
                 line.update()
             } 
         })
     
         document.getElementById('arrow-down').addEventListener('click', function(event) {
-            if (line.options.scales.yAxes[0].ticks.max > 10) {
-                line.options.scales.yAxes[0].ticks.max -= 5
+            if (line.options.scales.yAxes[0].ticks.max > 4) {
+                line.options.scales.yAxes[0].ticks.max -= 4
                 line.update()
             } 
         })
     
         document.getElementById('arrow-left').addEventListener('click', function(event) {
-            if (line.options.scales.xAxes[0].ticks.max > 5) {
+            if (line.options.scales.xAxes[0].ticks.max > line.options.scales.xAxes[0].ticks.min + 1) {
                 line.options.scales.xAxes[0].ticks.max -= 1
                 line.update()
             } 

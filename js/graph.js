@@ -12,7 +12,7 @@ new Vue({
                         fill: false,
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',
                         borderColor: 'rgba(0, 0, 0, 0.5)',
-                        borderWidth: 1,
+                        borderWidth: 10,
                         data: [0]
                     },
                     {
@@ -20,7 +20,7 @@ new Vue({
                         fill: false,
                         backgroundColor: 'rgba(255, 69, 0, 0.5)',
                         borderColor: 'rgba(255, 69, 0, 0.5)',
-                        borderWidth: 1,                              
+                        borderWidth: 10,                              
                         data: [0]                                    
                     },                                               
                     {                                                
@@ -28,7 +28,7 @@ new Vue({
                         fill: false,                         
                         backgroundColor: 'rgba(75, 0, 130, 0.5)',    
                         borderColor: 'rgba(75, 0, 130, 0.5)',        
-                        borderWidth: 1,
+                        borderWidth: 10,
                         data: [0]
                     },
                     {
@@ -36,7 +36,7 @@ new Vue({
                         fill: false,                                 
                         backgroundColor: 'rgba(0, 0, 255, 0.5)',     
                         borderColor: 'rgba(0, 0, 255, 0.5)',         
-                        borderWidth: 1,                  
+                        borderWidth: 10,                  
                         data: [0]                      
                     }]                                               
             },                                                       
@@ -45,7 +45,7 @@ new Vue({
                     yAxes: [{                                        
                         ticks: {                           
                             min: 0,
-                            max: 100                         
+                            max: 4                         
                         }                                            
                     }],
                     xAxes: [{
@@ -54,6 +54,13 @@ new Vue({
                           max: 0
                         }
                     }]                                               
+                },
+                tooltips: {
+                    mode: false,
+                    callbacks: {
+                        title: function() {},
+                        label: function() {}
+                    }
                 }                                                  
             }                                                      
         },
@@ -62,7 +69,7 @@ new Vue({
     mounted: function() {                                        
         let ctx = document.getElementById("chart").getContext("2d")
         let line = new Chart(ctx, this.config)                     
-        let self = this                                            
+        let self = this                                 
                                                                    
         setInterval(function(){                                                               
             // self.setTime(10);                                      
@@ -175,10 +182,10 @@ new Vue({
             // this.config.data.datasets[2].data.push(history_arr.pop())
             // this.config.data.datasets[1].data.push(history_arr.pop())
             // this.config.data.datasets[0].data.push(history_arr.pop())
-                                                                     
-            this.config.data.labels.push(this.time)                  
-                                                                     
-            this.time += 1                                           
+                                             
+            this.config.data.labels.push(this.time)  
+            
+            this.time += 1      
                                                                      
             chart.update()                                           
         },
